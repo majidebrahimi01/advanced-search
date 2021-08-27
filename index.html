@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>advanced search</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!--start advansed search -->
+        <section class="searchBox">
+            <article class="searchContainer">
+                <div class="input-group">
+                    <button class="btn btn-success" onclick=" getResults() ">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </button>
+                    <input type="text" class="form-control" placeholder="search..." onfocus="this.placeholder='' " onblur="this.placeholder='search...' ">
+                </div>
+                <a href="#" class="btn btn-success" onclick="toggleFilters() ">
+                    Advanced
+            </a>
+            </article>
+            <article class="filtersContainer " id="FiltersBox ">
+                <span class="desc">Advansed Search</span>
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 input-field">
+                        <div class="input-select">
+                            <select data-trigger="" name="choices-single-defaul">
+                                <option placeholder="" value="">genre</option>
+                                <option>subject a</option>
+                                <option>subject b</option>
+                                <option>subject c</option>
+                                <option>subject d</option>
+                                <option>subject e</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 input-field">
+                        <div class="input-select">
+                            <select data-trigger="" name="choices-single-defaul">
+                                    <option placeholder="" value="">Country</option>
+                                    <option>subject a</option>
+                                    <option>subject b</option>
+                                </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 input-field">
+                        <div class="input-select">
+                            <select data-trigger="" name="choices-single-defaul">
+                                <option placeholder="" value="">Quality</option>
+                                <option>subject a</option>
+                                <option>subject b</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 input-field">
+                        <div class="input-select">
+                            <select data-trigger="" name="choices-single-defaul">
+                                <option placeholder="" value="">Ages</option>
+                                <option>subject a</option>
+                                <option>subject b</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 input-field">
+                        <div class="input-select">
+                            <select data-trigger="" name="choices-single-defaul">
+                                <option placeholder="" value="">Critics score</option>
+                                <option>subject a</option>
+                                <option>subject b</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 input-field">
+                        <div class="input-select">
+                            <select data-trigger="" name="choices-single-defaul">
+                                <option placeholder="" value="">User score</option>
+                                <option>subject a</option>
+                                <option>subject b</option>
+                                <option>subject c</option>
+                                <option>subject d</option>
+                                <option>subject e</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 input-field">
+                        <div class="input-select">
+                            <select data-trigger="" name="choices-single-defaul">
+                                <option placeholder="" value="">imdb score</option>
+                                <option>subject a</option>
+                                <option>subject b</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 input-field">
+                        <div class="input-select">
+                            <select data-trigger="" name="choices-single-defaul">
+                                <option placeholder="" value="">view order</option>
+                                <option>subject a</option>
+                                <option>subject b</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 input-field">
+                        <div class="input-select">
+                            <select data-trigger="" name="choices-single-defaul">
+                                <option placeholder="" value="">from</option>
+                                <option>1900</option>
+                                <option>1910</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 input-field">
+                        <div class="input-select">
+                            <select data-trigger="" name="choices-single-defaul">
+                                <option placeholder="" value="">to</option>
+                                <option>1990</option>
+                                <option>2000</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <button type="button" class="btn_choose_sent">
+                            <input type="radio" name="name" checked />Dubbed
+                        </button>
+                        <button type="button" class="btn_choose_sent">
+                            <input type="radio" name="name" />Subtitle
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field">
+                        <div class="group-btn">
+                            <button class="btn btn-success">search</button>
+                            <button class="btn btn-danger" id="delete">reset</button>
+                        </div>
+                        <div class="result-count">
+                            search result <span>108 </span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+        <!--end advansed search -->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/choices.js"></script>
+    <script>
+        //start advansed search 
+        let showFilters = false;
+        if (showFilters) {
+            document.getElementById("FiltersBox ").style.display = "grid ";
+        } else {
+            document.getElementById("FiltersBox ").style.display = "none ";
+        }
+
+        function toggleFilters() {
+            showFilters = !showFilters;
+            if (showFilters) {
+                document.getElementById("FiltersBox ").style.display = "grid ";
+            } else {
+                document.getElementById("FiltersBox ").style.display = "none ";
+            }
+        }
+
+        function getResults() {
+            $.ajax({
+                url: "https://reqres.in/api/users ",
+                type: "GET ",
+                success: function(response) {
+                    console.log(response);
+                }
+            });
+        }
+        const customSelects = document.querySelectorAll("select");
+        const deleteBtn = document.getElementById('delete')
+        const choices = new Choices('select', {
+            searchEnabled: false,
+            removeItemButton: true,
+            itemSelectText: '',
+        });
+        for (let i = 0; i < customSelects.length; i++) {
+            customSelects[i].addEventListener('addItem', function(event) {
+                if (event.detail.value) {
+                    let parent = this.parentNode.parentNode
+                    parent.classList.add('valid')
+                    parent.classList.remove('invalid')
+                } else {
+                    let parent = this.parentNode.parentNode
+                    parent.classList.add('invalid')
+                    parent.classList.remove('valid')
+                }
+            }, false);
+        }
+        deleteBtn.addEventListener("click", function(e) {
+            e.preventDefault()
+            const deleteAll = document.querySelectorAll('.choices__button')
+            for (let i = 0; i < deleteAll.length; i++) {
+                deleteAll[i].click();
+            }
+        });
+        // end advansed search
+    </script>
+
+
+</body>
+
+</html>
